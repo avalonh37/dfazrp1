@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_vqi",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyPipeline_vqi",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 4,
+				"startTime": "2022-06-13T23:08:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
