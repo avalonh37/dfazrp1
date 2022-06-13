@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_vqi",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "tblxlsp",
+			"table": "Azure Blob Storage file"
+		}
+	}
+}

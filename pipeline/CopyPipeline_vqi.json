@@ -1,0 +1,164 @@
+{
+	"name": "CopyPipeline_vqi",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_vqi",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "vulnerability-assessment//Users SSO DXC to Azure Migration_v2.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "tblxlsp.Azure Blob Storage file"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"validateDataConsistency": false,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureBlobStorage1",
+								"type": "LinkedServiceReference"
+							},
+							"path": "vulnerability-assessment"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "OPCP",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OPCP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Currency",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Currency",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Perfil",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Perfil",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nombre",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Nombre",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerId",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CustomerId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Cuenta",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Cuenta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Correo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Correo",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_vqi",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_vqi",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
