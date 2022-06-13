@@ -1,0 +1,24 @@
+{
+	"name": "Trigger_gc7",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "MetadataDrivenCopyTask_gc7_TopLevel",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 4,
+				"startTime": "2022-06-13T21:59:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
