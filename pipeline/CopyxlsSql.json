@@ -47,7 +47,22 @@
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false,
+					"enableSkipIncompatibleRow": true,
+					"validateDataConsistency": true,
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Warning",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "AzureBlobStorage1",
+								"type": "LinkedServiceReference"
+							},
+							"path": "vulnerability-assessment"
+						}
+					},
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
