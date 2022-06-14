@@ -47,7 +47,82 @@
 						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
-					"validateDataConsistency": false
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "OPCP",
+									"type": "String"
+								},
+								"sink": {
+									"name": "OPCP",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Currency",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Currency",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Perfil",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Perfil",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Nombre",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Nombre",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CustomerId",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CustomerId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Cuenta",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Cuenta",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Correo",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Correo",
+									"type": "String"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
