@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDataset_omv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "azr",
+			"table": "tblxlsp"
+		}
+	}
+}
